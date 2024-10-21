@@ -1,0 +1,155 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Portfolio - Zetia Agency{% endblock %}
+
+{% block body %}
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Besoin de voir plus de travaux ? c’est par ici</h1>
+                <p class="hero-description">
+                    Découvrez mes projets récents en graphisme, web design et community management. Chaque réalisation témoigne de mon engagement à transformer vos idées en succès visuels et digitaux.
+                </p>
+                <div class="hero-buttons">
+                    <a href="{{ path('contact') }}" class="btn btn-primary">Prendre Contact</a>
+                    <a href="{{ path('about') }}" class="btn btn-secondary">Qui suis-je ?</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-hero-content">
+                <div class="about-hero-image">
+                    <img src="/images/instagram_hydroflex.png" alt="Gestion réseaux hydroflex">
+                </div>
+                <div class="about-hero-text">
+                    <h2>Community manager</h2>
+                    <p>
+                        En tant que Community Manager pour Hydroflex, une entreprise spécialisée dans la réparation et la maintenance hydraulique.
+                        J’ai élaboré une stratégie digitale adaptée à leurs besoins spécifiques.
+                        Mon objectif principal était de renforcer la présence en ligne d’Hydrauflex en mettant en valeur leur expertise technique.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section">
+        <div class="container">
+            <h2 class="portfolio-title">Mes Réalisations</h2>
+
+            <div class="portfolio-grid">
+                <!-- Portfolio item 1 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-carousel">
+                        <div class="carousel">
+                            <img src="/images/realisations1.jpg" alt="Projet 1">
+                            <img src="/images/realisations2.jpg" alt="Projet 1 - 2">
+                        </div>
+                        <!-- Indicateurs -->
+                        <div class="carousel-indicators">
+                            <span class="indicator active"></span>
+                            <span class="indicator"></span>
+                        </div>
+                    </div>
+                    <h3>Gestion des réseaux sociaux Le Haappyy</h3>
+                    <p>J’ai pris en charge la gestion des réseaux sociaux de Le Haappyy, en optimisant leur présence sur Instagram et Facebook.</p>
+                </div>
+
+                <!-- Portfolio item 2 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-carousel">
+                        <div class="carousel">
+                            <img src="/images/realisations3.jpg" alt="Projet 2">
+                            <img src="/images/realisations4.jpg" alt="Projet 2 - 2">
+                        </div>
+                        <!-- Indicateurs -->
+                        <div class="carousel-indicators">
+                            <span class="indicator active"></span>
+                            <span class="indicator"></span>
+                        </div>
+                    </div>
+                    <h3>Création graphique pour une entreprise de nettoyage de véhicules</h3>
+                    <p>J’ai conçu des créations graphiques pour une entreprise de nettoyage de véhicules.</p>
+                </div>
+
+                <!-- Portfolio item 3 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-carousel">
+                        <div class="carousel">
+                            <img src="/images/realisations5.jpg" alt="Projet 3">
+                            <img src="/images/realisations6.jpg" alt="Projet 3 - 2">
+                        </div>
+                        <!-- Indicateurs -->
+                        <div class="carousel-indicators">
+                            <span class="indicator active"></span>
+                            <span class="indicator"></span>
+                        </div>
+                    </div>
+                    <h3>Création de Marque et Gestion des Réseaux Sociaux</h3>
+                    <p>J’ai lancé une marque de vêtements en développant une identité visuelle forte et en gérant leurs réseaux sociaux.</p>
+                </div>
+
+                <!-- Portfolio item 4 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-carousel">
+                        <div class="carousel">
+                            <img src="/images/realisations1.jpg" alt="Gestion du Compte Instagram">
+                            <img src="/images/realisations2.jpg" alt="Gestion du Compte Instagram">
+                        </div>
+                        <!-- Indicateurs -->
+                        <div class="carousel-indicators">
+                            <span class="indicator active"></span>
+                            <span class="indicator"></span>
+                        </div>
+                    </div>
+                    <h3>Gestion du Compte Instagram d'une Agence Digitale</h3>
+                    <p>J’ai été chargé de la gestion du compte Instagram d’une agence digitale pendant mon apprentissage.</p>
+                </div>
+
+                <!-- Portfolio item 5 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-carousel">
+                        <div class="carousel">
+                            <img src="/images/realisations3.jpg" alt="Conception de Flyer pour l'Orchestre de Montpellier">
+                            <img src="/images/realisations4.jpg" alt="Conception de Flyer pour l'Orchestre de Montpellier">
+                        </div>
+                        <!-- Indicateurs -->
+                        <div class="carousel-indicators">
+                            <span class="indicator active"></span>
+                            <span class="indicator"></span>
+                        </div>
+                    </div>
+                    <h3>Conception de Flyer pour l'Orchestre de Montpellier</h3>
+                    <p>J’ai conçu un flyer destiné à attirer un public jeune pour une série de concerts orchestrés.</p>
+                </div>
+
+                <!-- Portfolio item 6 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-carousel">
+                        <div class="carousel">
+                            <img src="/images/realisations5.jpg" alt="Maquette d'Application Mobile">
+                            <img src="/images/realisations6.jpg" alt="Maquette d'Application Mobile">
+                        </div>
+                        <!-- Indicateurs -->
+                        <div class="carousel-indicators">
+                            <span class="indicator active"></span>
+                            <span class="indicator"></span>
+                        </div>
+                    </div>
+                    <h3>Maquette d'Application Mobile pour une Marque de Bijoux</h3>
+                    <p>J’ai conçu une maquette d’application mobile pour une marque de bijoux proposant des magasins éphémères.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {# Inclusion du Footer #}
+    {% include 'base/footer.html.twig' %}
+
+{% endblock %}

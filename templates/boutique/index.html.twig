@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Boutique{% endblock %}
+
+{% block body %}
+    <section class="boutique-section">
+        <div class="container">
+            <h1>Boutique</h1>
+            <div class="products-grid">
+                {% for illustration in illustrations %}
+                    <div class="product-card">
+                        <img src="{{ asset(illustration.image1) }}" alt="{{ illustration.name }}">
+                        <h2>{{ illustration.name }}</h2>
+                        <p>{{ illustration.description }}</p>
+                        <p>{{ illustration.price }} €</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
