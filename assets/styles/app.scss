@@ -138,7 +138,7 @@ h1, h2, h3 {
 // Hero Section
 .hero-section {
   background-color: #1c1c1c;
-  padding: 60px 0;
+  padding: 1px 0 50px 0;
 
   .container {
     display: flex;
@@ -203,7 +203,7 @@ h1, h2, h3 {
 
     .hero-image {
       img {
-        max-width: 500px;
+        max-width: 400px;
         height: auto;
 
         @media screen and (max-width: 768px) {
@@ -763,13 +763,14 @@ h1, h2, h3 {
     }
 
     .indicator.active {
-      background-color: #00ff00;
+      background-color: #1c222f;
     }
   }
 
   // Media query pour mobile
   @media screen and (max-width: 768px) {
     .portfolio-grid {
+      grid-template-columns: 1fr; /* 1 colonne sur mobile */
       flex-direction: column;
       gap: 20px;
       align-items: center;
@@ -946,3 +947,242 @@ h1, h2, h3 {
     }
   }
 }
+
+//BOUTIQUE
+/* Grille des catégories */
+.categories-grid {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  padding: 20px;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.category-card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  transition: box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.category-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.category-card a:hover {
+  text-decoration: none;
+}
+
+.category-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.category-icon img {
+  width: 50px;
+  height: 50px;
+}
+
+.category-name p {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+
+
+/* Grille des produits */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 40px 40px;
+  padding: 20px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 15px;
+  height: 100%;
+}
+
+.product-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.product-details {
+  margin-top: 15px;
+  flex-grow: 1;
+}
+
+.product-details h2 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+
+  /* Forcer l'affichage sur 2 lignes */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 3em;
+}
+
+.product-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 4.5em;
+  line-height: 1.5em;
+}
+
+
+.product-price {
+  font-size: 18px;
+  color: #111;
+  font-weight: 600;
+}
+
+.fa-shopping-cart {
+  margin-right: 5px;
+}
+
+.product-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.add-to-cart,
+.btn-secondary {
+  background-color: #00ff00;
+  color: #1c222f;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover,
+.btn-secondary:hover {
+  background-color: #00ff00;
+}
+
+.btn-secondary {
+  background-color: #00ff00;
+  text-decoration: none;
+  display: inline-block;
+}
+
+
+/* Grille des produits pour mobile */
+@media (max-width: 768px) {
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Affiche deux cartes par ligne */
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .product-card {
+    padding: 10px;
+    border-radius: 5px;
+    height: auto;
+  }
+
+  .product-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: contain;
+  }
+
+  .product-details h2 {
+    font-size: 14px;
+    margin-bottom: 5px;
+    height: 2.5em;
+  }
+
+  .product-price {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .add-to-cart {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .fa-shopping-cart {
+    margin-right: 3px;
+  }
+}
+
+/* Grille des produits pour écran plus grand (tablettes et desktop) */
+@media (min-width: 769px) {
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    padding: 20px;
+  }
+
+  .product-card {
+    padding: 15px;
+    border-radius: 10px;
+    height: 100%;
+  }
+
+  .product-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  .product-details h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    height: 3em;
+  }
+
+  .product-price {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .add-to-cart {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+}
+
+/* Grille des produits pour tablette (entre 769px et 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .products-grid {
+    gap: 42px;
+  }
+}
+
+
+
+
