@@ -76,9 +76,11 @@
                         <a href="{{ path('fiche_produit', {id: illustration.id}) }}" class="btn btn-secondary">
                             Voir la fiche
                         </a>
-                        <button class="add-to-cart">
-                            <i class="fa fa-shopping-cart"></i>
-                        </button>
+
+                        <form action="{{ path('add_to_cart', {id: illustration.id, redirect_to: app.request.uri}) }}" method="POST" class="add-to-cart">
+                            <button type="submit" class="fa fa-shopping-cart"></button>
+                        </form>
+
                     </div>
                 </div>
 

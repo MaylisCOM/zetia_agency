@@ -20,7 +20,15 @@
                 <li>
                     <a href="{{ path('contact')}}" class="{% if app.request.attributes.get('_route') == 'contact' %}active{% endif %}">Contact</a>
                 </li>
-
+                <li>
+                    {% set cart = app.session.get('cart', {}) %}
+                    {% if cart|length > 0 %}
+                        <a href="{{ path('cart') }}" class="cart">
+                            <i class="fa fa-shopping-cart"></i>
+                            <span class="cart-count">{{ cart|length }}</span>
+                        </a>
+                    {% endif %}
+                </li>
             </ul>
             <div class="burger">
                 <div class="line1"></div>

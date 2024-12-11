@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Votre Panier{% endblock %}
+
+{% block body %}
+    <div class="cart-page container">
+        <h1>Votre Panier</h1>
+
+        <div class="cart-content">
+            <div class="cart-items">
+                {% if products is not empty %}
+                    <div class="cart-item-list">
+                        {% for item in products %}
+                            <div class="cart-item">
+                                <div class="item-image">
+                                    <img src="{{ asset('build/images/boutique/' ~ item.product.image1) }}" alt="{{ item.product.name }}">
+                                </div>
+                                <div class="item-details">
+
+                                    <p class="item-price">{{ item.product.price }} €</p>
+                                    <h2>{{ item.product.name }}</h2>
+
+                                    <div class="item-actions">
+                                        <p class="item-actions-p">Qté: 1</p>
+                                        <form action="{{ path('remove_from_cart', {id: item.product.id}) }}" method="POST">
+                                            <button type="submit" class="btn-remove">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p>Votre panier est vide.</p>
+                {% endif %}
+            </div>
+
+            <div class="cart-summary">
+                <h2>Total</h2>
+                <div class="cart-summary-details">
+                    <p class="cart-total">Sous-total <span>{{ totalPrice }} €</span></p>
+                    <p class="shipping-info">Livraison standard <span>4,49 €</span></p>
+                    <p class="cart-final-total">Total <span>{{ totalPrice + 4.49 }} €</span></p>
+                </div>
+
+                <div class="payment-options">
+                    <a href="{{ path('choix_paiement') }}" class="btn btn-primary">Paiement</a>
+
+                    <p class="payment-options-p">Nous acceptons :</p>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
